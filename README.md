@@ -9,15 +9,18 @@
 
 **To-DO List app**
 
-<p>This To-Do List webapp is created using ReactJs library.
+<p>This To-Do List webapp is created using ReactJs.
 You can write and save many To-Do list as you wish.
-You can also delete them.</p>
+You can also delete them.
+Your all todo items are saved in local storage.
+</p>
 
 ---
 
 ## Technologies used
 
 - ReactJs
+- Local Storage Browser API
 
 ---
 

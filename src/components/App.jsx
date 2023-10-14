@@ -1,9 +1,15 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ToDoItem from "./ToDoItem";
 import InputArea from "./InputArea";
 
+const getTodoItemsList = () => {
+  const data = localStorage.getItem("todoItemsList");
+  const list = JSON.parse(data);
+  return list?.length > 0 ? list : [];
+}
+
 function App() {
-  const [items, setItems] = useState([]);
+  const [items, setItems] = useState(getTodoItemsList());
 
   function addItem(inputText) {
     setItems((prevItems) => {
@@ -19,6 +25,10 @@ function App() {
     });
   }
 
+  useEffect(() => {
+    localStorage.setItem("todoItemsList", JSON.stringify(items));
+  }, [items]);
+
   return (
     <div className="container">
       <div className="heading">
@@ -26,7 +36,7 @@ function App() {
       </div>
       <InputArea addItem={addItem} />
       <div>
-        <ul>
+        <ul className="todo-list-items">
           {items.map((todoItem, index) => (
             <ToDoItem
               onCross={deleteItem}

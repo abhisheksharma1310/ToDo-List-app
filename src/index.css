@@ -1,7 +1,5 @@
 body {
-  width: 100%;
   background-color: #ffeaa7;
-  min-height: 70vh;
   padding: 1rem;
   box-sizing: border-box;
   display: flex;
@@ -14,10 +12,11 @@ body {
 }
 
 .container {
-  height: auto;
-  min-height: 550px;
-  max-width: 90%;
-  min-width: 400px;
+  min-height: 80vh;
+  max-height: 90vh;
+  max-width: 96%;
+  overflow: auto;
+  /* min-width: 400px; */
   background: #f1f5f8;
   background-image: radial-gradient(#bfc0c1 7.2%, transparent 0);
   background-size: 25px 25px;
@@ -63,6 +62,7 @@ button {
   padding-bottom: 3px;
   border-radius: 5px;
   background-color: #ffeaa7;
+  margin-left: 5px;
 }
 button span {
   background: #f1f5f8;
@@ -82,4 +82,15 @@ li {
   display: flex;
   align-items: stretch;
   justify-content: space-between;
+}
+
+.todo-list-items {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+@media screen and (max-width: 640px) {
+  .container {
+    min-width: 100%;
+  }
 }

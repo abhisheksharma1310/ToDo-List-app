@@ -15,9 +15,13 @@ const InputArea = ({ addItem }) => {
     }
   }
 
+  const onEnterKey = (e) => {
+    if(e.keyCode === 13) handleAdd();
+  }
+
   return (
     <div className="form">
-      <input onChange={handleChange} type="text" value={inputText} />
+      <input onChange={handleChange} type="text" value={inputText} onKeyDown={onEnterKey}/>
       <button onClick={handleAdd}>
         <span>Add</span>
       </button>
